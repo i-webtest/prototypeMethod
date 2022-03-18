@@ -1,23 +1,18 @@
 "use strict";
 
 class First {
-  constructor(parent) {
-    this.parent = parent;
-  }
-
   hello() {
-    console.log(this.parent);
+    console.log("Привет я метод родителя!");
   }
 }
 
 class Second extends First {
   hello() {
-    console.log(this.parent);
+    super.hello();
+    console.log("А я наследуемый метод!");
   }
 }
 
-const first = new First("Привет я метод родителя!");
-const second = new First("А я наследуемый метод!");
+const second = new Second();
 
-first.hello();
 second.hello();
